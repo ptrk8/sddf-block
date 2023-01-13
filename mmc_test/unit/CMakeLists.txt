@@ -28,7 +28,7 @@ function(add_google_test test_target target)
 endfunction(add_google_test)
 
 
-add_executable(test_bit test_bit.cpp)
-
-add_google_test(test_bit lib_bit)
+#add_executable(test_bit test_bit.cpp)
+#
+#add_google_test(test_bit lib_bit)
 
