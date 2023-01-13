@@ -62,7 +62,7 @@
             name="serial_driver"
             priority="101"
             pp="true">
-        <program_image path="serial_driver.elf"/>
+        <program_image path="mmc_driver.elf"/>
         <!-- We map our physical memory to the virtual address at 0x5_000_000 -->
         <map
                 mr="uart"

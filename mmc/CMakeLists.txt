@@ -37,24 +37,24 @@ project(mmc C)
 #        lib_serial_parity
 #        lib_bit
 #)
-#
-#add_library(lib_imx_uart src/imx_uart.c)
-#target_include_directories(lib_imx_uart PUBLIC include/)
-#target_link_libraries(
-#        lib_imx_uart
-#        lib_sel4cp_imx8mm
-#        lib_imx_uart_regs
-#)
-#
-#add_library(lib_serial_driver src/serial_driver.c)
-#target_include_directories(lib_serial_driver PUBLIC include/)
-#target_link_libraries(
-#        lib_serial_driver
-#        lib_sel4cp_imx8mm
-#        lib_imx_uart
-#        serial_lib_shared_ringbuffer
-#)
-#
+
+add_library(lib_imx_usdhc src/imx_usdhc.c)
+target_include_directories(lib_imx_usdhc PUBLIC include/)
+target_link_libraries(
+        lib_imx_usdhc
+        lib_sel4cp_imx8mm
+        lib_imx_uart_regs
+)
+
+add_library(lib_mmc_driver src/mmc_driver.c)
+target_include_directories(lib_mmc_driver PUBLIC include/)
+target_link_libraries(
+        lib_mmc_driver
+        lib_sel4cp_imx8mm
+        lib_imx_uart
+        serial_lib_shared_ringbuffer
+)
+
 #add_library(lib_serial_client src/serial_client.c)
 #target_include_directories(lib_serial_client PUBLIC include/)
 #target_link_libraries(

@@ -292,6 +292,7 @@ void init(void) {
         return;
     }
     /* Basic E2E tests for printf. */
+    serial_client_printf("\n=== Hello from MMC. ===\n");
     serial_client_printf("\n=== START ===\n");
     serial_client_printf("Initialising UART device...\n");
     serial_client_printf("UART device initialisation SUCCESS.\n");

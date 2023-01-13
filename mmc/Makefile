@@ -36,7 +36,7 @@ SHARED_RING_BUFFER_DIR := $(SRC_DIR)/libsharedringbuffer
 
 BOARD_DIR := $(SEL4CP_SDK)/board/$(SEL4CP_BOARD)/$(SEL4CP_CONFIG)
 
-IMAGES := serial_driver.elf \
+IMAGES := mmc_driver.elf \
 			serial_client.elf
 CFLAGS := -mcpu=$(CPU) -mstrict-align -ffreestanding -g3 -O3 -Wall  -Wno-unused-function
 LDFLAGS := -L$(BOARD_DIR)/lib
@@ -51,10 +51,10 @@ CFLAGS += \
 	-I$(SHARED_RING_BUFFER_DIR)/include \
 
 # Specifies which Object files in $(BUILD_DIR) should be linked.
-SERIAL_DRIVER_OBJS := \
-	serial_driver.o \
+MMC_DRIVER_OBJS := \
+	mmc_driver.o \
 	imx_uart_regs.o \
-	imx_uart.o \
+	imx_usdhc.o \
 	serial_parity.o \
 	bit.o \
 	libsharedringbuffer/shared_ringbuffer.o \
@@ -85,11 +85,11 @@ $(BUILD_DIR)/%.o: $(SRC_DIR)/%.s Makefile
 	$(AS) -g3 -mcpu=$(CPU) $< -o $@
 
 # ======================================
-# Step 2: Generate our $(BUILD_DIR)/serial_driver.elf ELF file using each
-# $(SERIAL_DRIVER_OBJS) object file in the $(BUILD_DIR).
+# Step 2: Generate our $(BUILD_DIR)/mmc_driver.elf ELF file using each
+# $(MMC_DRIVER_OBJS) object file in the $(BUILD_DIR).
 # ======================================
 
-$(BUILD_DIR)/serial_driver.elf: $(addprefix $(BUILD_DIR)/, $(SERIAL_DRIVER_OBJS))
+$(BUILD_DIR)/mmc_driver.elf: $(addprefix $(BUILD_DIR)/, $(MMC_DRIVER_OBJS))
 	$(LD) $(LDFLAGS) $^ $(LIBS) -o $@
 
 $(BUILD_DIR)/serial_client.elf: $(addprefix $(BUILD_DIR)/, $(SERIAL_CLIENT_OBJS))
