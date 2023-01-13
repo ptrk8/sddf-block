@@ -29,19 +29,19 @@ target_include_directories(mmc_lib_bit PUBLIC include/)
 add_library(mmc_lib_serial_parity src/serial_parity.c)
 target_include_directories(mmc_lib_serial_parity PUBLIC include/)
 
-add_library(lib_imx_usdhc_regs src/imx_usdhc_regs.c)
-target_include_directories(lib_imx_usdhc_regs PUBLIC include/)
+add_library(lib_imx_sdhc_regs src/imx_sdhc_regs.c)
+target_include_directories(lib_imx_sdhc_regs PUBLIC include/)
 target_link_libraries(
-        lib_imx_usdhc_regs
+        lib_imx_sdhc_regs
         lib_sel4cp_imx8mm
         mmc_lib_serial_parity
         mmc_lib_bit
 )
 
-add_library(lib_imx_usdhc src/imx_usdhc.c)
-target_include_directories(lib_imx_usdhc PUBLIC include/)
+add_library(lib_imx_sdhc src/imx_sdhc.c)
+target_include_directories(lib_imx_sdhc PUBLIC include/)
 target_link_libraries(
-        lib_imx_usdhc
+        lib_imx_sdhc
         lib_sel4cp_imx8mm
         lib_imx_uart_regs
 )

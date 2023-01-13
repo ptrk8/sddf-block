@@ -1,4 +1,4 @@
-#include "imx_usdhc.h"
+#include "imx_sdhc.h"
 
 
 bool imx_uart_init(

@@ -53,8 +53,8 @@ CFLAGS += \
 # Specifies which Object files in $(BUILD_DIR) should be linked.
 MMC_DRIVER_OBJS := \
 	mmc_driver.o \
-	imx_usdhc_regs.o \
-	imx_usdhc.o \
+	imx_sdhc_regs.o \
+	imx_sdhc.o \
 	serial_parity.o \
 	bit.o \
 	libsharedringbuffer/shared_ringbuffer.o \

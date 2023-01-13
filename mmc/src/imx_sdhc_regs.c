@@ -1,4 +1,4 @@
-#include "imx_usdhc_regs.h"
+#include "imx_sdhc_regs.h"
 
 /**
  * Sets the baud rate.

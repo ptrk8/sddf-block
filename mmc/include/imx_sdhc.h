@@ -2,7 +2,7 @@
 
 #include <stdbool.h>
 
-#include "imx_usdhc_regs.h"
+#include "imx_sdhc_regs.h"
 
 typedef struct imx_uart imx_uart_t;
 volatile struct imx_uart {
