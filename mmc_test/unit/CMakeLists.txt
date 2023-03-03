@@ -3,7 +3,6 @@ cmake_minimum_required(VERSION 3.7.2)
 project(serial_test_unit CXX C)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_C_STANDARD 99)
 
 # These are compiler flags specific for running tests.
 set(GCC_COMPILE_FLAGS -Wall -Werror -Wvla -O0 -Wno-unused-function -Wno-unused-variable)
